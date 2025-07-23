@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Laboratorio Definitivo de Aprendizaje UX/UI</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Lora (Serif) & Inter (Sans-Serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Animate On Scroll Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* Estilo base para la fuente y la paleta de colores */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff; 
+            color: #111827;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        h1, h2, h3, h4, .font-serif {
+            font-family: 'Lora', serif;
+        }
+        /* Clases personalizadas para la estética */
+        .bg-dark { background-color: #111827; }
+        .bg-light { background-color: #f9fafb; }
+        .text-light { color: #f9fafb; }
+        .text-medium { color: #4b5563; }
+        .border-dark { border-color: #374151; }
+        .border-light { border-color: #e5e7eb; }
+        
+        /* Estilos para la barra de navegación activa */
+        .nav-link.active {
+            color: #111827;
+            font-weight: 600;
+        }
+        .nav-link.active::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: #111827;
+            margin-top: 2px;
+            transition: width 0.3s;
+        }
+
+        /* Estilos para la zona de arrastre en el ejercicio de Card Sorting */
+        .drop-zone.over {
+            border-style: solid;
+            border-color: #3b82f6;
+            background-color: #eff6ff;
+        }
+        .card-item { cursor: grab; }
+        .card-item:active { cursor: grabbing; }
+        .heuristic-btn.correct, .pattern-btn.correct { background-color: #16a34a; color: white; border-color: #16a34a; }
+        .heuristic-btn.incorrect, .pattern-btn.incorrect { background-color: #dc2626; color: white; border-color: #dc2626; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- ========== HEADER / NAVEGACIÓN FIJA ========== -->
+    <header class="bg-white/90 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 border-b border-light">
+        <div class="container mx-auto px-6 py-4">
+            <nav class="flex items-center justify-between">
+                <a href="#" class="font-serif text-xl font-bold tracking-tight text-gray-900">Learning Lab</a>
+                <div class="hidden md:flex items-center space-x-10">
+                    <a href="#theory" class="nav-link text-medium hover:text-gray-900 transition-colors duration-300">Teoría</a>
+                    <a href="#intro" class="nav-link text-medium hover:text-gray-900 transition-colors duration-300">Fundamentos</a>
+                    <a href="#process" class="nav-link text-medium hover:text-gray-900 transition-colors duration-300">Proceso</a>
+                    <a href="#principles" class="nav-link text-medium hover:text-gray-900 transition-colors duration-300">Principios</a>
+                    <a href="#practice" class="nav-link text-medium hover:text-gray-900 transition-colors duration-300">Laboratorio</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ========== SECCIÓN HERO ========== -->
+        <section class="py-24 sm:py-32 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div data-aos="fade-right">
+                        <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 leading-tight">
+                            Diseño que Resuena
+                        </h1>
+                        <p class="mt-6 text-lg text-medium">
+                            Bienvenido al laboratorio donde la psicología se encuentra con el pixel. Aprende a construir experiencias que no solo funcionen, sino que se sientan intuitivas, lógicas y profundamente humanas.
+                        </p>
+                    </div>
+                    <div data-aos="fade-left" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1587440871875-191322ee64b0?q=80&w=2071&auto=format&fit=crop" alt="Mesa de trabajo de un diseñador con bocetos" class="rounded-xl shadow-2xl w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== NUEVO MÓDULO: TEORÍA ORGANIZADA ========== -->
+        <section id="theory" class="py-20 sm:py-24 bg-white border-t border-light">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 data-aos="fade-up" class="text-4xl font-bold tracking-tight font-serif">¿Qué es UX y UI? La Teoría</h2>
+                    <p data-aos="fade-up" data-aos-delay="100" class="mt-3 text-lg text-medium max-w-3xl mx-auto">Aunque trabajan juntos, UX y UI son dos disciplinas distintas. Entender su diferencia es el primer paso para dominar el diseño de productos digitales.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-x-12 gap-y-16">
+                    <div data-aos="fade-up">
+                        <h3 class="font-serif text-3xl font-semibold mb-6">User Experience (UX) Design</h3>
+                        <p class="text-medium mb-6">El Diseño de Experiencia de Usuario es el proceso de crear productos que proporcionen experiencias significativas y relevantes a los usuarios. Se ocupa de todo el viaje, desde que el usuario descubre el producto hasta que lo usa y más allá. Es una disciplina estratégica que se enfoca en la **función, la usabilidad y la lógica**.</p>
+                        <h4 class="font-semibold mb-3">Componentes Clave del UX:</h4>
+                        <ul class="space-y-4 text-medium">
+                            <li class="flex items-start"><div class="flex-shrink-0 w-6 h-6 rounded-full bg-dark text-light text-sm flex items-center justify-center mr-4 mt-1">1</div><div><strong>Investigación de Usuario:</strong> Entender a los usuarios a través de entrevistas, encuestas y análisis de datos para descubrir sus necesidades y frustraciones.</div></li>
+                            <li class="flex items-start"><div class="flex-shrink-0 w-6 h-6 rounded-full bg-dark text-light text-sm flex items-center justify-center mr-4 mt-1">2</div><div><strong>Arquitectura de la Información (AI):</strong> Organizar y estructurar el contenido de manera lógica e intuitiva. Se trata de que los usuarios encuentren lo que buscan sin esfuerzo.</div></li>
+                            <li class="flex items-start"><div class="flex-shrink-0 w-6 h-6 rounded-full bg-dark text-light text-sm flex items-center justify-center mr-4 mt-1">3</div><div><strong>Diseño de Interacción (IxD):</strong> Definir cómo responde el sistema a las acciones del usuario. Se enfoca en crear un diálogo fluido entre la persona y el producto.</div></li>
+                            <li class="flex items-start"><div class="flex-shrink-0 w-6 h-6 rounded-full bg-dark text-light text-sm flex items-center justify-center mr-4 mt-1">4</div><div><strong>Pruebas de Usabilidad:</strong> Observar a usuarios reales interactuando con el producto para identificar problemas y validar las soluciones de diseño.</div></li>
+                        </ul>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="font-serif text-3xl font-semibold mb-6">User Interface (UI) Design</h3>
+                        <p class="text-medium mb-6">El Diseño de Interfaz de Usuario es el complemento visual y táctil del UX. Se enfoca en la apariencia y la interactividad del producto. Si el UX es el esqueleto y los órganos, el UI es la piel, los rasgos y los sentidos. Se enfoca en la **estética, la presentación y la interactividad**.</p>
+                        <h4 class="font-semibold mb-3">Componentes Clave del UI:</h4>
+                        <ul class="space-y-4 text-medium">
+                            <li class="flex items-start"><div class="flex-shrink-0 w-6 h-6 rounded-full bg-dark text-light text-sm flex items-center justify-center mr-4 mt-1">1</div><div><strong>Diseño Visual:</strong> La aplicación de la teoría del color, la tipografía, la iconografía y el espaciado para crear una interfaz estéticamente agradable y coherente con la marca.</div></li>
+                            <li class="flex items-start"><div class="flex-shrink-0 w-6 h-6 rounded-full bg-dark text-light text-sm flex items-center justify-center mr-4 mt-1">2</div><div><strong>Sistemas de Diseño:</strong> La creación y mantenimiento de una librería de componentes reutilizables (botones, formularios, etc.) para garantizar la consistencia y eficiencia en todo el producto.</div></li>
+                            <li class="flex items-start"><div class="flex-shrink-0 w-6 h-6 rounded-full bg-dark text-light text-sm flex items-center justify-center mr-4 mt-1">3</div><div><strong>Diseño Interactivo y Animaciones:</strong> El diseño de transiciones, microinteracciones y animaciones que guían al usuario y proporcionan feedback visual, haciendo que la interfaz se sienta viva.</div></li>
+                            <li class="flex items-start"><div class="flex-shrink-0 w-6 h-6 rounded-full bg-dark text-light text-sm flex items-center justify-center mr-4 mt-1">4</div><div><strong>Accesibilidad (a11y):</strong> Asegurar que la interfaz pueda ser utilizada por personas con diversas habilidades y discapacidades, por ejemplo, garantizando un contraste de color adecuado.</div></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== MÓDULO 1: FUNDAMENTOS DEL DISEÑADOR ========== -->
+        <section id="intro" class="py-20 sm:py-24 bg-light border-y border-light">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 data-aos="fade-up" class="text-4xl font-bold tracking-tight font-serif">Fundamentos del Diseñador</h2>
+                    <p data-aos="fade-up" data-aos-delay="100" class="mt-3 text-lg text-medium max-w-2xl mx-auto">Un gran diseño se apoya en una comprensión profunda de la percepción humana y la comunicación visual.</p>
+                </div>
+                
+                <div class="mb-16">
+                    <h3 class="font-serif text-3xl font-semibold mb-8 text-center" data-aos="fade-up">Principios de la Gestalt</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-white p-6 rounded-lg border border-light" data-aos="fade-up" data-aos-delay="100"><img src="https://placehold.co/400x250/f9fafb/111827?text=Proximidad" class="w-full h-40 object-cover mb-4 rounded-md" alt="Diagrama del principio de proximidad"><h4 class="font-serif font-semibold text-lg">Proximidad</h4><p class="text-medium text-sm">Elementos cercanos se perciben como un grupo.</p></div>
+                        <div class="bg-white p-6 rounded-lg border border-light" data-aos="fade-up" data-aos-delay="200"><img src="https://placehold.co/400x250/f9fafb/111827?text=Semejanza" class="w-full h-40 object-cover mb-4 rounded-md" alt="Diagrama del principio de semejanza"><h4 class="font-serif font-semibold text-lg">Semejanza</h4><p class="text-medium text-sm">Elementos similares se perciben como relacionados.</p></div>
+                        <div class="bg-white p-6 rounded-lg border border-light" data-aos="fade-up" data-aos-delay="300"><img src="https://placehold.co/400x250/f9fafb/111827?text=Región+Común" class="w-full h-40 object-cover mb-4 rounded-md" alt="Diagrama del principio de región común"><h4 class="font-serif font-semibold text-lg">Región Común</h4><p class="text-medium text-sm">Elementos en un mismo contenedor se ven como un grupo.</p></div>
+                        <div class="bg-white p-6 rounded-lg border border-light" data-aos="fade-up" data-aos-delay="100"><img src="https://placehold.co/400x250/f9fafb/111827?text=Cierre" class="w-full h-40 object-cover mb-4 rounded-md" alt="Diagrama del principio de cierre"><h4 class="font-serif font-semibold text-lg">Cierre</h4><p class="text-medium text-sm">Nuestro cerebro completa formas inacabadas para crear objetos reconocibles.</p></div>
+                        <div class="bg-white p-6 rounded-lg border border-light" data-aos="fade-up" data-aos-delay="200"><img src="https://placehold.co/400x250/f9fafb/111827?text=Continuidad" class="w-full h-40 object-cover mb-4 rounded-md" alt="Diagrama del principio de continuidad"><h4 class="font-serif font-semibold text-lg">Continuidad</h4><p class="text-medium text-sm">El ojo sigue el camino más suave al ver líneas, incluso si se cruzan.</p></div>
+                        <div class="bg-white p-6 rounded-lg border border-light" data-aos="fade-up" data-aos-delay="300"><img src="https://placehold.co/400x250/f9fafb/111827?text=Figura-Fondo" class="w-full h-40 object-cover mb-4 rounded-md" alt="Diagrama del principio de figura-fondo"><h4 class="font-serif font-semibold text-lg">Figura-Fondo</h4><p class="text-medium text-sm">Percibimos elementos como en primer plano (figura) o en el fondo.</p></div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div data-aos="fade-up"><h3 class="font-serif text-3xl font-semibold mb-6 text-center">Psicología del Color</h3><div class="bg-white p-8 rounded-lg border border-light h-full"><p class="text-medium">El color no es solo decoración; evoca emociones y guía la atención. El negro transmite sofisticación y autoridad. El blanco sugiere limpieza y simplicidad. Los acentos de color (como el azul para la confianza o el verde para el éxito) deben usarse intencionadamente para guiar al usuario y reforzar el significado de las acciones.</p></div></div>
+                    <div data-aos="fade-up" data-aos-delay="100"><h3 class="font-serif text-3xl font-semibold mb-6 text-center">Fundamentos de Tipografía</h3><div class="bg-white p-8 rounded-lg border border-light h-full"><p class="text-medium">La tipografía es la voz de tu interfaz. Una jerarquía clara (títulos, subtítulos, cuerpo) es crucial. Las fuentes Serif (como esta) son excelentes para títulos por su elegancia, mientras que las Sans-serif (como el texto del párrafo) son ideales para cuerpos de texto largos por su legibilidad en pantalla.</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== MÓDULO 2: EL PROCESO DE DISEÑO DETALLADO ========== -->
+        <section id="process" class="py-20 sm:py-24 bg-white">
+             <div class="container mx-auto px-6">
+                <div class="text-center mb-16"><h2 data-aos="fade-up" class="text-4xl font-bold tracking-tight font-serif">El Proceso de Diseño Detallado</h2><p data-aos="fade-up" data-aos-delay="100" class="mt-3 text-lg text-medium max-w-2xl mx-auto">Un viaje estructurado desde la idea hasta el producto final, basado en el Design Thinking.</p></div>
+                <div class="relative"><div class="absolute left-4 md:left-1/2 w-0.5 h-full bg-light -translate-x-1/2" aria-hidden="true"></div><div class="relative flex items-start mb-16" data-aos="fade-right"><div class="flex-shrink-0 w-8 h-8 rounded-full bg-dark text-light flex items-center justify-center ring-8 ring-white z-10">1</div><div class="ml-6 md:ml-0 md:w-1/2 md:pr-12"><h3 class="text-2xl font-semibold font-serif">Empatizar e Investigar</h3><p class="text-medium mt-2">Comprender profundamente a los usuarios. <br><b>Entregables:</b> User Personas, Mapas de Empatía, Análisis Competitivo.</p></div></div><div class="relative flex items-start justify-end mb-16" data-aos="fade-left"><div class="hidden md:block md:w-1/2 md:pl-12"><h3 class="text-2xl font-semibold font-serif">Definir y Estructurar</h3><p class="text-medium mt-2">Sintetizar hallazgos y organizar la información.<br><b>Entregables:</b> Journey Maps, Arquitectura de Información, User Flows.</p></div><div class="flex-shrink-0 w-8 h-8 rounded-full bg-dark text-light flex items-center justify-center ring-8 ring-white z-10">2</div><div class="ml-6 md:hidden"><h3 class="text-2xl font-semibold font-serif">Definir y Estructurar</h3><p class="text-medium mt-2">Sintetizar hallazgos y organizar la información.<br><b>Entregables:</b> Journey Maps, Arquitectura de Información, User Flows.</p></div></div><div class="relative flex items-start mb-16" data-aos="fade-right"><div class="flex-shrink-0 w-8 h-8 rounded-full bg-dark text-light flex items-center justify-center ring-8 ring-white z-10">3</div><div class="ml-6 md:ml-0 md:w-1/2 md:pr-12"><h3 class="text-2xl font-semibold font-serif">Idear y Diseñar</h3><p class="text-medium mt-2">Generar soluciones y crear la estructura visual.<br><b>Entregables:</b> Bocetos, Wireframes (Baja Fidelidad), Mockups (Alta Fidelidad).</p></div></div><div class="relative flex items-start justify-end" data-aos="fade-left"><div class="hidden md:block md:w-1/2 md:pl-12"><h3 class="text-2xl font-semibold font-serif">Prototipar y Probar</h3><p class="text-medium mt-2">Crear versiones interactivas y validarlas con usuarios.<br><b>Entregables:</b> Prototipos Interactivos, Informes de Pruebas de Usabilidad, Iteraciones de Diseño.</p></div><div class="flex-shrink-0 w-8 h-8 rounded-full bg-dark text-light flex items-center justify-center ring-8 ring-white z-10">4</div><div class="ml-6 md:hidden"><h3 class="text-2xl font-semibold font-serif">Prototipar y Probar</h3><p class="text-medium mt-2">Crear versiones interactivas y validarlas con usuarios.<br><b>Entregables:</b> Prototipos Interactivos, Informes de Pruebas de Usabilidad, Iteraciones de Diseño.</p></div></div></div>
+             </div>
+        </section>
+        
+        <!-- ========== MÓDULO 3: PRINCIPIOS Y SISTEMAS ========== -->
+        <section id="principles" class="py-20 sm:py-24 bg-light border-y border-light">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16"><h2 data-aos="fade-up" class="text-4xl font-bold tracking-tight font-serif">Principios y Sistemas</h2><p data-aos="fade-up" data-aos-delay="100" class="mt-3 text-lg text-medium max-w-2xl mx-auto">Las reglas y herramientas que garantizan la calidad y consistencia.</p></div>
+                <div class="mb-20"><h3 class="font-serif text-3xl font-semibold mb-8 text-center" data-aos="fade-up">10 Heurísticas de Usabilidad de Nielsen</h3><div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-lg border border-light" data-aos="fade-up" data-aos-delay="50"><h4 class="font-semibold">1. Visibilidad del estado del sistema</h4><p class="text-sm text-medium">El sistema siempre debe mantener informados a los usuarios sobre lo que está sucediendo.</p></div>
+                    <div class="bg-white p-6 rounded-lg border border-light" data-aos="fade-up" data-aos-delay="100"><h4 class="font-semibold">2. Relación entre el sistema y el mundo real</h4><p class="text-sm text-medium">El sistema debe hablar el lenguaje de los usuarios, con palabras y conceptos familiares.</p></div>
+                    <div class="bg-white p-6 rounded-lg border border-light" data-aos="fade-up" data-aos-delay="50"><h4 class="font-semibold">3. Control y libertad del usuario</h4><p class="text-sm text-medium">Los usuarios necesitan una "salida de emergencia" claramente marcada para dejar el estado no deseado.</p></div>
+                    <div class="bg-white p-6 rounded-lg border border-light" data-aos="fade-up" data-aos-delay="100"><h4 class="font-semibold">4. Consistencia y estándares</h4><p class="text-sm text-medium">No hagas que los usuarios se pregunten si diferentes palabras o acciones significan lo mismo.</p></div>
+                    <div class="bg-white p-6 rounded-lg border border-light" data-aos="fade-up" data-aos-delay="50"><h4 class="font-semibold">5. Prevención de errores</h4><p class="text-sm text-medium">El mejor diseño es el que previene los problemas antes de que ocurran.</p></div>
+                    <div class="bg-white p-6 rounded-lg border border-light" data-aos="fade-up" data-aos-delay="100"><h4 class="font-semibold">6. Reconocimiento antes que recuerdo</h4><p class="text-sm text-medium">Minimiza la carga de memoria del usuario haciendo visibles los objetos, acciones y opciones.</p></div>
+                    <div class="bg-white p-6 rounded-lg border border-light" data-aos="fade-up" data-aos-delay="50"><h4 class="font-semibold">7. Flexibilidad y eficiencia de uso</h4><p class="text-sm text-medium">Permite a los usuarios adaptar las acciones frecuentes. Los aceleradores pueden agilizar la interacción.</p></div>
+                    <div class="bg-white p-6 rounded-lg border border-light" data-aos="fade-up" data-aos-delay="100"><h4 class="font-semibold">8. Diseño estético y minimalista</h4><p class="text-sm text-medium">Los diálogos no deben contener información irrelevante o que se necesite raramente.</p></div>
+                    <div class="bg-white p-6 rounded-lg border border-light" data-aos="fade-up" data-aos-delay="50"><h4 class="font-semibold">9. Ayudar a recuperarse de errores</h4><p class="text-sm text-medium">Los mensajes de error deben expresarse en un lenguaje sencillo, indicar el problema y sugerir una solución.</p></div>
+                    <div class="bg-white p-6 rounded-lg border border-light" data-aos="fade-up" data-aos-delay="100"><h4 class="font-semibold">10. Ayuda y documentación</h4><p class="text-sm text-medium">Es mejor si el sistema se puede usar sin documentación, pero puede ser necesario proporcionar ayuda.</p></div>
+                </div></div>
+                
+                <div class="mb-20"><h3 class="font-serif text-3xl font-semibold mb-8 text-center" data-aos="fade-up">Sistemas de Diseño y Atomic Design</h3><div class="grid md:grid-cols-2 gap-12 items-center"><div data-aos="fade-right"><p class="text-medium mb-4">Un <strong>Sistema de Diseño</strong> es la única fuente de verdad que agrupa todos los elementos que permitirán a los equipos diseñar y desarrollar un producto. La metodología de <strong>Atomic Design</strong>, de Brad Frost, propone una estructura para estos sistemas:</p><ul class="list-disc list-inside text-medium space-y-1"><li><strong>Átomos:</strong> Los bloques más básicos (colores, fuentes, un botón).</li><li><strong>Moléculas:</strong> Grupos de átomos que funcionan juntos (un campo de búsqueda con su botón).</li><li><strong>Organismos:</strong> Combinaciones de moléculas que forman secciones de una interfaz (un encabezado).</li><li><strong>Plantillas:</strong> La estructura de una página sin el contenido final.</li><li><strong>Páginas:</strong> Instancias específicas de las plantillas con contenido real.</li></ul></div><div data-aos="fade-left"><img src="https://bradfrost.com/wp-content/uploads/2013/06/atomic-design.png" onerror="this.onerror=null;this.src='https://placehold.co/600x400/111827/ffffff?text=Atomic+Design';" alt="Diagrama de Atomic Design" class="rounded-lg shadow-xl w-full"></div></div></div>
+
+                <div><h3 class="font-serif text-3xl font-semibold mb-8 text-center" data-aos="fade-up">UX Writing: El Poder de las Palabras</h3><div class="grid md:grid-cols-2 gap-8 items-center"><div class="bg-white p-8 rounded-lg border border-light" data-aos="fade-up"><h4 class="font-semibold mb-4">Mal Microcopy 👎</h4><div class="border-2 border-red-200 p-4 rounded-md bg-red-50"><p class="text-red-700">Error: Entrada inválida.</p><button class="mt-2 bg-red-500 text-white text-sm py-1 px-3 rounded">OK</button></div><p class="text-sm text-medium mt-2">Es vago, técnico y no ofrece solución.</p></div><div class="bg-white p-8 rounded-lg border border-light" data-aos="fade-up" data-aos-delay="100"><h4 class="font-semibold mb-4">Buen Microcopy 👍</h4><div class="border-2 border-green-200 p-4 rounded-md bg-green-50"><p class="text-green-800">Parece que ese correo no es válido. ¿Podrías intentarlo de nuevo?</p><button class="mt-2 bg-green-600 text-white text-sm py-1 px-3 rounded">Entendido</button></div><p class="text-sm text-medium mt-2">Es humano, claro y guía al usuario.</p></div></div></div>
+            </div>
+        </section>
+
+        <!-- ========== MÓDULO 4: RECURSOS Y PRÁCTICAS ========== -->
+        <section id="resources" class="py-20 sm:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-16"><h2 data-aos="fade-up" class="text-4xl font-bold tracking-tight font-serif">Recursos y Prácticas</h2><p data-aos="fade-up" data-aos-delay="100" class="mt-3 text-lg text-medium max-w-2xl mx-auto">El aprendizaje nunca termina. Sumérgete en estos recursos y ponte a prueba.</p></div>
+                 <div class="grid lg:grid-cols-2 gap-16">
+                    <div data-aos="fade-up"><h3 class="font-serif text-2xl font-semibold mb-6">Lecturas y Comunidades</h3><div class="grid grid-cols-2 gap-8"><ul class="space-y-3 text-medium"><li><h4 class="font-semibold mb-2">Libros Clave</h4></li><li>"Don't Make Me Think"</li><li>"The Design of Everyday Things"</li><li>"Hooked"</li><li>"Sprint"</li></ul><ul class="space-y-3 text-medium"><li><h4 class="font-semibold mb-2">Blogs y Publicaciones</h4></li><li>Nielsen Norman Group</li><li>Smashing Magazine</li><li>UX Collective</li><li>A List Apart</li></ul></div></div>
+                    <div data-aos="fade-up" data-aos-delay="100"><h3 class="font-serif text-2xl font-semibold mb-6">Prácticas para tu Portafolio</h3><div class="space-y-4"><div class="bg-light p-4 rounded-lg border border-light"><h4 class="font-semibold">Rediseña una App</h4><p class="text-sm text-medium">Elige una app, identifica problemas de usabilidad y propón una solución documentando tu proceso.</p></div><div class="bg-light p-4 rounded-lg border border-light"><h4 class="font-semibold">Crea un Caso de Estudio</h4><p class="text-sm text-medium">Inventa un producto o servicio y desarrolla un caso de estudio completo, desde la investigación hasta el prototipo final.</p></div></div></div>
+                 </div>
+            </div>
+        </section>
+
+        <!-- ========== MÓDULO 5: LABORATORIO INTERACTIVO ========== -->
+        <section id="practice" class="py-20 sm:py-24 bg-light border-y border-light">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16"><h2 data-aos="fade-up" class="text-4xl font-bold tracking-tight font-serif">Laboratorio Interactivo</h2><p data-aos="fade-up" data-aos-delay="100" class="mt-3 text-lg text-medium max-w-2xl mx-auto">Pon a prueba tus conocimientos con estos ejercicios prácticos.</p></div>
+                <div class="space-y-16">
+                    <div class="bg-white p-8 sm:p-12 rounded-xl border border-light" data-aos="fade-up"><h3 class="font-serif text-2xl font-bold mb-2">Ejercicio: Card Sorting</h3><p class="text-medium mb-8">Organiza los temas de un sitio de e-commerce. Arrastra cada tarjeta a la categoría que consideres correcta para mejorar la Arquitectura de la Información.</p><div class="grid grid-cols-1 md:grid-cols-3 gap-6"><div class="space-y-4"><h4 class="font-semibold text-center py-2 bg-light rounded-md border border-light">Mi Cuenta</h4><div id="cat-account" class="drop-zone bg-light p-4 rounded-lg border-2 border-dashed border-light min-h-[150px] space-y-2"></div></div><div class="space-y-4"><h4 class="font-semibold text-center py-2 bg-light rounded-md border border-light">Información</h4><div id="cat-info" class="drop-zone bg-light p-4 rounded-lg border-2 border-dashed border-light min-h-[150px] space-y-2"></div></div><div class="space-y-4"><h4 class="font-semibold text-center py-2 bg-light rounded-md border border-light">Ayuda</h4><div id="cat-help" class="drop-zone bg-light p-4 rounded-lg border-2 border-dashed border-light min-h-[150px] space-y-2"></div></div></div><div id="card-source" class="mt-8 flex flex-wrap gap-3 justify-center"><div class="card-item bg-dark text-light py-2 px-4 rounded-full text-sm" draggable="true" data-category="account">Historial de Pedidos</div><div class="card-item bg-dark text-light py-2 px-4 rounded-full text-sm" draggable="true" data-category="help">Política de Envíos</div><div class="card-item bg-dark text-light py-2 px-4 rounded-full text-sm" draggable="true" data-category="info">Sobre Nosotros</div><div class="card-item bg-dark text-light py-2 px-4 rounded-full text-sm" draggable="true" data-category="account">Mis Direcciones</div><div class="card-item bg-dark text-light py-2 px-4 rounded-full text-sm" draggable="true" data-category="help">Preguntas Frecuentes</div><div class="card-item bg-dark text-light py-2 px-4 rounded-full text-sm" draggable="true" data-category="info">Contacto</div><div class="card-item bg-dark text-light py-2 px-4 rounded-full text-sm" draggable="true" data-category="help">Devoluciones</div><div class="card-item bg-dark text-light py-2 px-4 rounded-full text-sm" draggable="true" data-category="account">Editar Perfil</div></div><div class="text-center mt-8"><button class="bg-dark text-light font-semibold py-2 px-6 rounded-md hover:bg-gray-700 transition-colors" onclick="checkCardSorting()">Verificar</button><p id="card-sorting-result" class="mt-4 font-medium h-6"></p></div></div>
+                    <div class="bg-white p-8 sm:p-12 rounded-xl border border-light" data-aos="fade-up"><h3 class="font-serif text-2xl font-bold mb-2">Ejercicio: Verificador de Contraste (WCAG)</h3><p class="text-medium mb-8">Elige un color de texto y uno de fondo para comprobar si cumplen con las guías de accesibilidad web. Un ratio de 4.5:1 es el mínimo para texto normal (AA).</p><div class="grid md:grid-cols-3 gap-8 items-center"><div class="flex flex-col md:flex-row gap-6 items-center md:col-span-2"><div class="w-full"><label for="text-color" class="font-semibold block mb-2">Color de Texto</label><input type="color" id="text-color" value="#111827" class="w-full h-12 rounded-md border-light"></div><div class="w-full"><label for="bg-color" class="font-semibold block mb-2">Color de Fondo</label><input type="color" id="bg-color" value="#ffffff" class="w-full h-12 rounded-md border-light"></div></div><div id="contrast-preview" class="p-8 rounded-lg flex items-center justify-center transition-colors duration-300" style="background-color: #ffffff;"><p id="preview-text" class="text-2xl font-bold text-center" style="color: #111827;">Texto de Ejemplo</p></div></div><div id="contrast-results" class="mt-8 text-center"><p class="text-4xl font-bold">--</p><p class="text-medium font-semibold">Ratio de Contraste</p><div class="mt-4 flex justify-center gap-4 text-sm"><div id="wcag-aa" class="border-2 rounded-full py-1 px-4">WCAG AA: --</div><div id="wcag-aaa" class="border-2 rounded-full py-1 px-4">WCAG AAA: --</div></div></div></div>
+                    <div class="bg-white p-8 sm:p-12 rounded-xl border border-light" data-aos="fade-up"><h3 class="font-serif text-2xl font-bold mb-2">Ejercicio: Evaluación Heurística</h3><p class="text-medium mb-8">Analiza la siguiente interfaz de un formulario de registro. ¿Qué principio heurístico de Nielsen se está violando principalmente?</p><div class="bg-light p-8 rounded-lg border border-light flex flex-col items-center gap-4"><div class="w-full max-w-sm space-y-4"><input type="email" placeholder="Correo electrónico" class="w-full px-3 py-2 border border-gray-300 rounded-md"><input type="password" placeholder="Contraseña" class="w-full px-3 py-2 border border-gray-300 rounded-md"><button class="w-full bg-dark text-light py-2 rounded-md">Registrarse</button><p class="text-xs text-red-600 text-center">Error 54: Fallo de autenticación.</p></div></div><div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4" id="heuristic-choices"><button class="heuristic-btn bg-white border border-light py-2 px-4 rounded-md hover:bg-dark hover:text-light transition-colors text-sm" onclick="checkHeuristic(false, this)">Consistencia y estándares</button><button class="heuristic-btn bg-white border border-light py-2 px-4 rounded-md hover:bg-dark hover:text-light transition-colors text-sm" onclick="checkHeuristic(true, this)">Ayudar a recuperarse de errores</button><button class="heuristic-btn bg-white border border-light py-2 px-4 rounded-md hover:bg-dark hover:text-light transition-colors text-sm" onclick="checkHeuristic(false, this)">Control y libertad del usuario</button><button class="heuristic-btn bg-white border border-light py-2 px-4 rounded-md hover:bg-dark hover:text-light transition-colors text-sm" onclick="checkHeuristic(false, this)">Diseño minimalista</button></div><p id="heuristic-result" class="mt-4 font-medium text-center h-6"></p></div>
+                    <div class="bg-white p-8 sm:p-12 rounded-xl border border-light" data-aos="fade-up"><h3 class="font-serif text-2xl font-bold mb-2">Ejercicio: Reconocimiento de Patrones UI</h3><p class="text-medium mb-8">Identifica el nombre correcto para el siguiente componente de interfaz.</p><div class="flex justify-center mb-6"><img src="https://placehold.co/400x300/e5e7eb/111827?text=Componente+UI" id="pattern-image" alt="Componente de UI a identificar" class="rounded-lg shadow-md"></div><div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4" id="pattern-choices"><button class="pattern-btn bg-white border border-light py-2 px-4 rounded-md hover:bg-dark hover:text-light transition-colors" onclick="checkPattern(true, this)">Modal</button><button class="pattern-btn bg-white border border-light py-2 px-4 rounded-md hover:bg-dark hover:text-light transition-colors" onclick="checkPattern(false, this)">Tooltip</button><button class="pattern-btn bg-white border border-light py-2 px-4 rounded-md hover:bg-dark hover:text-light transition-colors" onclick="checkPattern(false, this)">Acordeón</button><button class="pattern-btn bg-white border border-light py-2 px-4 rounded-md hover:bg-dark hover:text-light transition-colors" onclick="checkPattern(false, this)">Banner</button></div><p id="pattern-result" class="mt-4 font-medium text-center h-6"></p></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-light"><div class="container mx-auto px-6 py-12 text-center"><p class="font-serif text-lg font-semibold">UX/UI Learning Lab</p><p class="mt-2 text-sm text-gray-400">&copy; 2025. Creado para fomentar el aprendizaje y la experimentación en diseño.</p></div></footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({ duration: 700, once: true, offset: 50 });
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('main > section[id]');
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 80) { current = section.getAttribute('id'); }
+                });
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) { link.classList.add('active'); }
+                });
+            });
+            const textColorInput = document.getElementById('text-color');
+            const bgColorInput = document.getElementById('bg-color');
+            if(textColorInput && bgColorInput) {
+                textColorInput.addEventListener('input', updateContrast);
+                bgColorInput.addEventListener('input', updateContrast);
+                updateContrast();
+            }
+        });
+
+        let draggedItem = null;
+        document.querySelectorAll('.card-item').forEach(item => {
+            item.addEventListener('dragstart', (e) => { draggedItem = e.target; setTimeout(() => e.target.style.display = 'none', 0); });
+            item.addEventListener('dragend', (e) => { setTimeout(() => { e.target.style.display = 'inline-flex'; draggedItem = null; }, 0); });
+        });
+        document.querySelectorAll('.drop-zone').forEach(zone => {
+            zone.addEventListener('dragover', (e) => { e.preventDefault(); zone.classList.add('over'); });
+            zone.addEventListener('dragleave', (e) => { zone.classList.remove('over'); });
+            zone.addEventListener('drop', (e) => { e.preventDefault(); if (draggedItem) { zone.appendChild(draggedItem); } zone.classList.remove('over'); });
+        });
+
+        function checkCardSorting() {
+            let correctCount = 0; const totalCards = 8; const resultEl = document.getElementById('card-sorting-result');
+            document.querySelectorAll('.drop-zone').forEach(zone => {
+                const zoneId = zone.id.split('-')[1];
+                zone.querySelectorAll('.card-item').forEach(card => {
+                    if (card.dataset.category === zoneId) { correctCount++; card.className = 'card-item bg-green-600 text-light py-2 px-4 rounded-full text-sm';
+                    } else { card.className = 'card-item bg-red-600 text-light py-2 px-4 rounded-full text-sm'; }
+                });
+            });
+            if (correctCount === totalCards) { resultEl.textContent = '¡Excelente! Organización perfecta.'; resultEl.className = 'mt-4 font-medium h-6 text-green-600';
+            } else { resultEl.textContent = `Tienes ${correctCount} de ${totalCards} correctas. ¡Sigue intentando!`; resultEl.className = 'mt-4 font-medium h-6 text-red-600'; }
+        }
+
+        function checkHeuristic(isCorrect, btn) {
+            const resultEl = document.getElementById('heuristic-result');
+            const choicesContainer = document.getElementById('heuristic-choices');
+            choicesContainer.querySelectorAll('.heuristic-btn').forEach(b => { b.disabled = true; b.classList.remove('hover:bg-dark', 'hover:text-light'); });
+            if (isCorrect) {
+                btn.classList.add('correct');
+                resultEl.textContent = '¡Correcto! El mensaje de error es técnico y no ayuda al usuario a entender qué salió mal o cómo solucionarlo.';
+                resultEl.className = 'mt-4 font-medium text-center h-auto text-green-600';
+            } else {
+                btn.classList.add('incorrect');
+                resultEl.textContent = 'Incorrecto. El problema principal es el mensaje de error incomprensible.';
+                resultEl.className = 'mt-4 font-medium text-center h-auto text-red-600';
+            }
+        }
+        
+        function checkPattern(isCorrect, btn) {
+            const resultEl = document.getElementById('pattern-result');
+            const choicesContainer = document.getElementById('pattern-choices');
+            choicesContainer.querySelectorAll('.pattern-btn').forEach(b => { b.disabled = true; b.classList.remove('hover:bg-dark', 'hover:text-light'); });
+            if (isCorrect) {
+                btn.classList.add('correct');
+                resultEl.textContent = '¡Correcto! Es una ventana modal, usada para mostrar contenido o acciones importantes sin salir de la página actual.';
+                resultEl.className = 'mt-4 font-medium text-center h-auto text-green-600';
+            } else {
+                btn.classList.add('incorrect');
+                resultEl.textContent = 'Incorrecto. Intenta de nuevo.';
+                resultEl.className = 'mt-4 font-medium text-center h-auto text-red-600';
+            }
+        }
+
+        function updateContrast() {
+            const textColor = document.getElementById('text-color').value, bgColor = document.getElementById('bg-color').value;
+            document.getElementById('contrast-preview').style.backgroundColor = bgColor;
+            document.getElementById('preview-text').style.color = textColor;
+            const lum1 = getLuminance(textColor), lum2 = getLuminance(bgColor);
+            const contrast = (Math.max(lum1, lum2) + 0.05) / (Math.min(lum1, lum2) + 0.05);
+            document.querySelector('#contrast-results p:first-child').textContent = contrast.toFixed(2);
+            updateWCAGStatus(document.getElementById('wcag-aa'), contrast >= 4.5, 'AA');
+            updateWCAGStatus(document.getElementById('wcag-aaa'), contrast >= 7, 'AAA');
+        }
+
+        function getLuminance(hex) {
+            const rgb = parseInt(hex.substring(1), 16), r = (rgb >> 16) & 0xff, g = (rgb >> 8) & 0xff, b = (rgb >> 0) & 0xff;
+            const a = [r, g, b].map(v => { v /= 255; return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); });
+            return a[0] * 0.2126 + a[1] * 0.7152 + a[2] * 0.0722;
+        }
+
+        function updateWCAGStatus(el, passes, level) {
+            el.textContent = `WCAG ${level}: ${passes ? 'Pasa' : 'Falla'}`;
+            el.className = `border-2 rounded-full py-1 px-4 ${passes ? 'border-green-600 text-green-600 bg-green-50' : 'border-red-600 text-red-600 bg-red-50'}`;
+        }
+    </script>
+</body>
+</html>
